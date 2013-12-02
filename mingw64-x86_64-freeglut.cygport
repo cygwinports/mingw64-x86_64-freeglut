@@ -1,5 +1,8 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
 NAME="mingw64-x86_64-freeglut"
-VERSION=2.8.0
+VERSION=2.8.1
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Open Source GLUT implementation for Win64 toolchain"
@@ -8,13 +11,10 @@ contains msvcrt-linked binaries (aka 'mingw').  It is for use with the
 mingw64-x86_64-gcc cross compiler, and installs into the
 /usr/x86_64-w64-mingw32/sys-root/mingw/{lib,include} directories."
 HOMEPAGE="http://freeglut.sourceforge.net/"
-SRC_URI="mirror://sourceforge/freeglut/freeglut-${PV}.tar.gz"
-SRC_DIR="freeglut-${PV}"
-CROSS_HOST="x86_64-w64-mingw32"
-inherit cross
+SRC_URI="mirror://sourceforge/freeglut/freeglut-${VERSION}.tar.gz"
+SRC_DIR="freeglut-${VERSION}"
 
 CYGCONF_ARGS="
-	--enable-shared --enable-static
 	--enable-replace-glut
 	--disable-warnings
 	--without-x
